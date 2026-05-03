@@ -1,0 +1,28 @@
+Society Name -  
+Total wings (4) : A, B, C, D
+Total flat types : rk , 1 bhk, 2 bhk
+
+A wing : floors : 7 , Flats per floor : 4 , flat size : 1 rk (room-kitchen), Total flats : 7 * 4 = 28 
+
+B wing : floors : 7 , Flats per floor : 4 , flat size : 1 bhk (Bedroom-Hall-kitchen), Total flats : 7 * 4 = 28, It has one extra flat as 005(1 bhk) : 29
+
+C wing : floors : 7 , Flats per floor : 4 , 2 types of flat size on each floor ( 2 1bhk & 1 2bhk) : 3 flats per floor , Total flats : 7 * 3 = 21, It has one extra flat as 005(1 bhk) : 22
+
+D wing : floors : 4 , Flats per floor : 4 , flat size : 1 rk (room-kitchen), Total flats : 4 * 4 = 16
+
+Total flats : 28(A) + 29(B) + 22(C) + 16(D) = 95
+
+flat no format : starts from : Ground floor (001 - 005) to 7th floor (701 - 704)
+
+Project flow : I think we can take flatno & wing as a input while user registration and then map it their respective flat size (rk, 1bhk, 2bhk) because user may feed wrong flat size)
+User Registration Inputs
+Wing → Dropdown (A, B, C, D) 
+Flat No → Number input (e.g., 101) 
+Combine both internally: A + 101 → A-101 (Always validate with database)
+Backend checks in flats collection:
+If exists ✅ → proceed
+If not ❌ → show error
+
+Phase 1 : +Creating Database structure as per society flats and then connect firebase with next app.
+               +Creating a proper user authentication for 2 user roles 1.Flat member (end-user) 2.Admin access (they will register and then create their own username & password for future login (end-user). also add forget password feature to chnage the password.
+               +Creating minimal next.js file structure for managing future pages easily.

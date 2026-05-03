@@ -1,0 +1,57 @@
+Society Maintenance System – MVP Flow & Tech Stack Document
+🎯 Project Objective
+
+To build a simple web application that digitizes the monthly society maintenance process by:
+
+Allowing residents to pay maintenance online
+Helping admin track payments easily
+Sending confirmation via Email & WhatsApp
+👥 User Roles
+1. Admin (Society Secretary)
+Manage all flats and users
+Generate monthly maintenance bills
+Track payment status (Paid / Pending)
+Send announcements
+2. Resident (Flat Owner)
+Login to system
+View monthly bill
+Pay maintenance online
+Receive confirmation (Email + WhatsApp)
+🔄 System Flow (End-to-End)
+🛠️ Admin Flow
+Admin logs into dashboard
+Admin clicks “Generate Bills”
+System creates bills for all flats (100 flats)
+Admin views dashboard:
+Total flats
+Paid users
+Pending users
+🏠 Resident Flow
+Resident logs in
+Views their monthly bill
+Clicks “Pay Now”
+Completes payment via payment gateway
+After successful payment:
+Bill status updated to Paid
+Email confirmation sent
+WhatsApp confirmation sent
+📩 Notification Flow
+Email:
+Triggered after successful payment
+Contains:
+Amount
+Month
+Payment status
+WhatsApp:
+Triggered after payment
+Simple message:
+“Your maintenance payment of ₹XXXX is successful.”
+📊 Core Features (MVP)
+Authentication (Admin & User login)
+Manual bill generation (by Admin)
+Payment integration
+Payment status tracking
+Email confirmation
+WhatsApp confirmation
+Basic admin dashboard
+Announcements (optional if time permits)
