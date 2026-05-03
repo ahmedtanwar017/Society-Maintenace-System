@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
-import Script from "next/script"; // ✅ import this
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +29,28 @@ export default function RootLayout({ children }) {
         {/* ✅ Razorpay Script */}
         <Script
           src="https://checkout.razorpay.com/v1/checkout.js"
-          strategy="beforeInteractive" // loads early
+          strategy="beforeInteractive"
         />
+
+        {/* ✅ Vercel Fix Script */}
+        <Script id="vercel-fix" strategy="beforeInteractive">
+          {`(function (l) {
+            if (l.search[1] === "/") {
+              var decoded = l.search
+                .slice(1)
+                .split("&")
+                .map(function (s) {
+                  return s.replace(/~and~/g, "&");
+                })
+                .join("?");
+              window.history.replaceState(
+                null,
+                null,
+                l.pathname.slice(0, -1) + decoded + l.hash
+              );
+            }
+          })(window.location);`}
+        </Script>
 
         {/* 🔥 Global Auth Context */}
         <AuthProvider>
